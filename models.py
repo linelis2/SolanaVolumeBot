@@ -52,13 +52,13 @@ def raydium_swap(connection, wallet, from_token, to_token, amount):
         buy(connection, wallet, to_token, amount)
     elif from_token == 'Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB':
         sell(connection, wallet, from_token, amount)
-        time.sleep(random.randint(25, 40))
+        time.sleep(random.randint(5, 20))
         balance = int(connection.get_balance(wallet.pubkey()).value * 0.85)
         amount = balance / (10 ** 9)
         buy(connection, wallet, to_token, amount)
     else:
         sell(connection, wallet, from_token, amount)
-        time.sleep(random.randint(25, 40))
+        time.sleep(random.randint(5, 20))
         balance = int(connection.get_balance(wallet.pubkey()).value * 0.85)
         amount = balance / (10 ** 9)
         buy(connection, wallet, 'Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB', amount)
@@ -113,7 +113,7 @@ def swapper(token_volume, my_token, key, settings):
 
     if balance > 0:
         swap(connection, wallet, token_volume, my_token, str(balance))
-        time.sleep(random.randint(25, 40))
+        time.sleep(random.randint(5, 20))
         num += 1
 
     if token_volume == 'So11111111111111111111111111111111111111112':
@@ -124,7 +124,7 @@ def swapper(token_volume, my_token, key, settings):
 
     swap(connection, wallet, token_volume, my_token, str(balance))
     num += 1
-    time.sleep(random.randint(25, 40))
+    time.sleep(random.randint(5, 20))
     balance, a = get_balance(connection, wallet.pubkey(), my_token)
     if random.randint(0, 1):
         swap(connection, wallet, my_token, token_volume, str(balance))
