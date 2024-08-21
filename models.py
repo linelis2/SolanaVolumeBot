@@ -124,7 +124,7 @@ def swapper(token_volume, my_token, key, settings):
 
     swap(connection, wallet, token_volume, my_token, str(balance))
     num += 1
-    time.sleep(random.randint(25, 40))
+    time.sleep(random.randint(5, 20))
     balance, a = get_balance(connection, wallet.pubkey(), my_token)
     if random.randint(0, 1):
         swap(connection, wallet, my_token, token_volume, str(balance))
